@@ -14,7 +14,7 @@ jobs:
       # documented at https://circleci.com/docs/2.0/circleci-images/
       # - image: circleci/mongo:3.4.4
 
-    working_directory: ~/repo
+    working_directory: ~/site
 
     steps:
       - checkout
@@ -35,4 +35,27 @@ jobs:
 
       # run tests!
       # - run: yarn test
+  deploy:
+      docker:
+        - image: circleci/node:7.10
+      working_directory: ~/site
+      steps:
+        - run:
+          name: Install awscli
+          command: sudo pip install awscli
+        - run:
+          name: deploy to s3
+          command: aws s3 sync ./ s3://devops.ttaanngg/builds
+
+workflows:
+  version: 2
+  build-deploy:
+    jobs:
+      - build
+      - deploy:
+          requires:
+            - build
+          filters:
+            branches:
+              only: master
 
