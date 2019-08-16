@@ -45,7 +45,6 @@ jobs:
             scp -r site/* ec2-user@54.67.55.54
             ssh ec2-user@54.67.55.54 
             forever start index.js
-
 workflows:
   version: 2
   build-deploy:
