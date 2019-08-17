@@ -1,7 +1,8 @@
 const path = require('path');
 
 module.exports = {
-  mode: 'development',
+  target: 'node',
+  mode: process.env.NODE_ENV,
   entry: './client/index.js',
   output: {
     filename: 'bundle.js',
@@ -9,7 +10,7 @@ module.exports = {
   },
   devServer:{
     compress: true,
-    port: 9000,
+    port: 8080,
     publicPath: '/dist'
   },
   module:{
@@ -23,6 +24,11 @@ module.exports = {
             presets: ['@babel/preset-env', '@babel/preset-react']
           }
         }
+      },
+      {
+        test: /\.scss$/,
+        exclude: /(node_modules)/,
+        use: ['style-loader', 'css-loader', 'sass-loader']
       }
     ]
   }
