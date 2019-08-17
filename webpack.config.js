@@ -1,17 +1,22 @@
 const path = require('path');
 
 module.exports = {
-  mode: 'production',
+  mode: 'development',
   entry: './client/index.js',
   output: {
-    path: path.resolve(__dirname, 'dist'),
-    filename: 'bundle.js'
+    filename: 'bundle.js',
+    path: path.resolve(__dirname, 'dist')
+  },
+  devServer:{
+    compress: true,
+    port: 9000,
+    publicPath: '/dist'
   },
   module:{
     rules: [
       {
-        test: /\.jsx?/,
-        exclude: /node_modules/,
+        test: /\.jsx?$/,
+        exclude: /(node_modules)/,
         use: {
           loader: 'babel-loader',
           options: {

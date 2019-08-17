@@ -4,6 +4,8 @@
   "description": "",
   "main": "index.js",
   "scripts": {
+    "start": "node server/index.js",
+    "dev": "webpack-dev-server --open",
     "test": "echo \"Error: no test specified\" && exit 1",
     "build": "webpack"
   },
@@ -24,6 +26,7 @@
     "@babel/preset-react": "^7.0.0",
     "babel-loader": "^8.0.6",
     "nodemon": "^1.19.1",
-    "webpack-cli": "^3.3.6"
+    "webpack-cli": "^3.3.6",
+    "webpack-dev-server": "^3.8.0"
   }
 }
