@@ -9,6 +9,9 @@ module.exports = {
     path: path.resolve(__dirname, 'dist')
   },
   devServer:{
+    proxy: {
+      '/api': 'http://localhost:3000'
+    },
     compress: true,
     port: 8080,
     publicPath: '/dist'
