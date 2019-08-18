@@ -1,9 +1,11 @@
 import React, {useEffect, useState } from 'react';
 import FeedItem from './FeedItem.jsx';
 
+const u = "https://ayumilovemaple.files.wordpress.com/2008/11/thief-preview.png?w=595"
+
 const fakeFetch = (hook, cb)=>{
   return setTimeout(()=>{
-    hook(['a','b','c']);
+    hook([{txt:"hi", img:u},{txt:"hey", img:u},{txt:"hello", img:u}]);
     if(cb){cb();}
   }, 0);
 }
