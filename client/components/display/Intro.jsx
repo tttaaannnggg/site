@@ -4,10 +4,10 @@ const Intro = (props)=>{
   return (
     <div>
       <p>
-        I'm here to do cool stuff
+        I'm here to have a good time
       </p>
     </div>
   )
 }
 
-export default Intro;
+export {Intro};

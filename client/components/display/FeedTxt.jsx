@@ -8,4 +8,4 @@ const FeedTxt = (props)=>{
   )
 }
 
-export default FeedTxt;
+export {FeedTxt};

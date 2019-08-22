@@ -14,12 +14,12 @@ app.get('/', (req,res)=>{
 app.get('/api/fortune', 
   FortController.getFortune, 
   (req, res)=>{
-    return res.send("Your fortune: " + res.locals.fortune);
+    return res.send(res.locals.fortune);
   }
 )
 
-app.use('*', (err, req, res, next)=>{
-  console.log('error!');
+app.use((err, req, res, next)=>{
+  console.log('error!', err);
 })
 
 app.listen(3000, ()=>{

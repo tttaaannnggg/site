@@ -1,5 +1,5 @@
-import React, {useEffect, useState } from 'react';
-import FeedItem from './FeedItem.jsx';
+import React, {useEffect, useState} from 'react';
+import {FeedItem} from './FeedItem.jsx';
 
 const u = "https://ayumilovemaple.files.wordpress.com/2008/11/thief-preview.png?w=595"
 
@@ -16,7 +16,7 @@ const stateToFeed = (state)=>{
   });
 }
 
-const Feed = (props)=>{
+export const Feed = (props)=>{
 
   const [feedState, setFeedState] = useState([]);
 
@@ -31,4 +31,3 @@ const Feed = (props)=>{
   )
 }
 
-export default Feed;

@@ -1,9 +1,9 @@
 import React from 'react';
-import FeedImg from '../display/FeedImg.jsx';
-import FeedTxt from '../display/FeedTxt.jsx';
+import { FeedImg } from '../display/FeedImg.jsx';
+import { FeedTxt } from '../display/FeedTxt.jsx';
 
 
-const FeedItem = (props)=>{
+export const FeedItem = (props)=>{
   return (
     <div>
       <FeedImg img={props.item.img}/>
@@ -12,4 +12,3 @@ const FeedItem = (props)=>{
   )
 }
 
-export default FeedItem;

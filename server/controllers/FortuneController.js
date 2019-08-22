@@ -1,13 +1,17 @@
 const fs = require('fs');
 const fortunes = [];
+const path = require('path');
 
-fs.readFile('./assets/fortunes.json', (err,data)=>{
-  const listFortunes = data.toString();
+fs.readFile(path.resolve(__dirname, '../assets/fortunes.json'), (err,data)=>{
+  console.log('initializing fortunes');
   if(err){
-    return;
+    console.err(err);
   }
-  return JSON.parse(listFortunes);
-})
+  const listFortunes = data.toString();
+  JSON.parse(listFortunes).forEach((item)=>{
+    fortunes.push(item);
+  });
+});
 
 const getFortune = (req, res, next)=>{
   const randomIndex = Math.floor(Math.random()*(fortunes.length))

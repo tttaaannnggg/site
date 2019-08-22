@@ -6,9 +6,9 @@
  *
  */
 import React from 'react';
-import Header from '../display/Header.jsx';
-import Intro from '../display/Intro.jsx';
-import Feed from '../containers/Feed.jsx';
+import {Header} from '../display/Header.jsx';
+import {Intro} from '../display/Intro.jsx';
+import {Feed} from '../containers/Feed.jsx';
 
 const Portfolio = (props)=>{
   return(
@@ -20,4 +20,4 @@ const Portfolio = (props)=>{
       )
 }
 
-export default Portfolio
+export {Portfolio}

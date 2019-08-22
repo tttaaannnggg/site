@@ -6,7 +6,7 @@
  *
  */
 import React from 'react';
-import Portfolio from './pages/Portfolio.jsx';
+import { Portfolio } from './pages/Portfolio.jsx';
 
 const App = (props)=>{
   return(
@@ -14,4 +14,4 @@ const App = (props)=>{
       )
 }
 
-export default App
+export { App }

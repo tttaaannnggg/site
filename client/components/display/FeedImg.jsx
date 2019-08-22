@@ -6,4 +6,4 @@ const FeedImg = (props)=>{
   )
 }
 
-export default FeedImg;
+export {FeedImg};
