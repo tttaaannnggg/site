@@ -3,10 +3,9 @@ import styled from 'styled-components';
 import { FortuneDisplay } from '../display/FortuneDisplay.jsx';
 
 const FortuneStyle = styled.div`
-  color:${(props) => props ? props.color : 'black'}
+  color:${(props) => !!props.color ? props.color : 'white'}
 `
-
-const Fortune = ({url})=>{
+const Fortune = (props)=>{
 
   const [fortuneObj, setFortuneObj] = useState({
     color:"black",
@@ -14,18 +13,15 @@ const Fortune = ({url})=>{
   })
 
   useEffect(()=>{
-    const abortController = new AbortController();
-    const signal = abortController.signal;
-    fetch('/api/fortune', {signal})
+    fetch('/api/fortune', /*{signal}*/)
       .then((data)=>{
-        data.json();
+        return data.json();
       })
       .then((json)=>{
         console.log(json);
         setFortuneObj(json);
       })
-    return ()=> abortController.abort();
-  });
+  }, []);
   return(
     <FortuneStyle color={fortuneObj.color}>
       <FortuneDisplay txt={fortuneObj.txt} />
