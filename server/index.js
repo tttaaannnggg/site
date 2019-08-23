@@ -1,7 +1,9 @@
 const express = require('express')
 const app = express();
-const path = require('path')
-
+const fs = require('fs');
+const FortController = require('./controllers/FortuneController');
+const path = require('path');
+const api = require('./routes/api');
 
 app.use('/dist', express.static(path.join(__dirname, '../dist')));
 
@@ -9,9 +11,16 @@ app.get('/', (req,res)=>{
   res.sendFile(path.join(__dirname, '../index.html'));
 })
 
-app.get('/api', (req,res)=>{
-  res.json('api response');
-});
+app.get('/api/fortune', 
+  FortController.getFortune, 
+  (req, res)=>{
+    return res.send(res.locals.fortune);
+  }
+)
+
+app.use((err, req, res, next)=>{
+  console.log('error!', err);
+})
 
 app.listen(3000, ()=>{
   console.log('listening on 3k');
