@@ -1,9 +1,7 @@
 import React from 'react';
 
-const FortuneDisplay = (props)=>{
-  return (
-    <p> Your fortune: {props.fortune}</p>
-  )
-}
+const FortuneDisplay = ({txt})=>(
+  <p> Your fortune: {txt}</p>
+):
 
-export {FortuneDisplay}
+export {FortuneDisplay};

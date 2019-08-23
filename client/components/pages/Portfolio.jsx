@@ -13,6 +13,7 @@ import {Feed} from '../containers/Feed.jsx';
 const Portfolio = (props)=>{
   return(
         <div>
+          <Fortune />
           <Header />
           <Intro />
           <Feed />
