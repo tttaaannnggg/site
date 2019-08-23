@@ -1,7 +1,7 @@
 const path = require('path');
 
 module.exports = {
-  target: 'node',
+  target: 'web',
   mode: process.env.NODE_ENV,
   entry: './client/index.js',
   output: {
@@ -10,7 +10,10 @@ module.exports = {
   },
   devServer:{
     proxy: {
-      '/api': 'http://localhost:3000'
+      '/api': {
+        target: 'http://localhost:3000/',
+      }
+
     },
     compress: true,
     port: 8080,
