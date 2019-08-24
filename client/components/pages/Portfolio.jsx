@@ -9,12 +9,10 @@ import React from 'react';
 import {Header} from '../display/Header.jsx';
 import {Intro} from '../display/Intro.jsx';
 import {Feed} from '../containers/Feed.jsx';
-import {Fortune} from '../containers/Fortune.jsx';
 
 const Portfolio = (props)=>{
   return(
         <div>
-          <Fortune />
           <Header />
           <Intro />
           <Feed />
