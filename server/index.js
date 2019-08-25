@@ -14,7 +14,7 @@ app.get('/', (req,res)=>{
 app.get('/api/fortune', 
   FortController.getFortune, 
   (req, res)=>{
-    return res.send(res.locals.fortune);
+    return res.json(res.locals.fortune);
   }
 )
 
