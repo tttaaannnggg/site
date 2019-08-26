@@ -10,7 +10,7 @@ import React from 'react';
 import {BrowserRouter as Router, Route, Link} from 'react-router-dom';
 import { Portfolio } from './pages/Portfolio.jsx';
 import { FortunePage } from './pages/FortunePage.jsx';
-import { Start } from './pages/MainNav.jsx';
+import { MainNav } from './pages/MainNav.jsx';
 
 const routes = ["fortune", "feed"];
 
