@@ -22,7 +22,7 @@ export const Feed = (props)=>{
 
   useEffect(()=>{
     fakeFetch(setFeedState, ()=>{});
-  });
+  }, []);
 
   return(
     <div>
