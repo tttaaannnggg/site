@@ -13,7 +13,7 @@ const Fortune = (props)=>{
   })
 
   useEffect(()=>{
-    fetch('/api/fortune', /*{signal}*/)
+    fetch('/api/fortune')
       .then((data)=>{
         return data.json();
       })
